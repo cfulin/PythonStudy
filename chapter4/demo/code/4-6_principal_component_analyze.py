@@ -14,3 +14,9 @@ pca = PCA()
 pca.fit(data)
 pca.components_ #返回模型的各个特征向量
 pca.explained_variance_ratio_ #返回各个成分各自的方差百分比
+
+pca = PCA(3)
+pca.fit(data)
+low_d = pca.transform(data)
+pd.DataFrame(low_d).to_excel(outputfile)
+pca.inverse_transform(low_d)
