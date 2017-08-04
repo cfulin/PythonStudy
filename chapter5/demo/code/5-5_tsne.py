@@ -1,10 +1,13 @@
 #-*- coding: utf-8 -*-
 #接k_means.py
 from sklearn.manifold import TSNE
+import pandas as pd
+# from 5-4_k_means
+
 
 tsne = TSNE()
 tsne.fit_transform(data_zs) #进行数据降维
-tsne = pd.DataFrame(tsne.embedding_, index = data_zs.index) #转换数据格式
+tsne = pd.DataFrame(tsne.embedding_, index=data_zs.index) #转换数据格式
 
 import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif'] = ['SimHei'] #用来正常显示中文标签
