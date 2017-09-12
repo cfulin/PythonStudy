@@ -15,10 +15,10 @@ def connect_string(x, ms):
 
 
 # 寻找关联规则的函数
-def find_rule(d, support, confidence, ms = u'--'):
+def find_rule(d, support, confidence, ms=u'--'):
   result = pd.DataFrame(index=['support', 'confidence'])  # 定义输出结果
   
-  support_series = 1.0*d.sum()/len(d) #支持度序列
+  support_series = 1.0*d.sum()/len(d)  # 支持度序列
   column = list(support_series[support_series > support].index)  # 初步根据支持度筛选
   k = 0
   
